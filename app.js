@@ -101,17 +101,17 @@ app.use(passport.session()); //This is a application-level middleware,
 //the session itself can be authenticated using the built-in session strategy
 
 //Below are the routes!
-app.use('/api/adoptions', adoptionRoute);
-app.use('/api/users', usersRoute);
-app.use('/api/auth', authRoute);
+app.use('/adoptions', adoptionRoute);
+app.use('/users', usersRoute);
+app.use('/auth', authRoute);
 
 //Testing if server works
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
 	res.send('hello TESTING, successful!');
 
 });
 
-app.get('/api/hello', (req, res) => {
+app.get('/hello', (req, res) => {
 	console.log('server received /api/hello')
 	res.send('/api/hello, successful!');
 
