@@ -112,6 +112,7 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/api/hello', (req, res) => {
+	console.log('server received /api/hello')
 	res.send('/api/hello, successful!');
 
 });
