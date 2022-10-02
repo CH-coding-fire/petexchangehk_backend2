@@ -9,7 +9,7 @@ const { thisServerURL } = require('./urlClientAndServer');
 passport.use(new GoogleStrategy({
 			clientID: process.env.GOOGLE_CLIENT_ID,
 			clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-	callbackURL: `${ thisServerURL }/auth/google/callback`,
+	callbackURL: `${ thisServerURL }/api/auth/google/callback`,
 		},
 		function (accessToken, refreshToken, profile, done) {
 			done(null, profile);

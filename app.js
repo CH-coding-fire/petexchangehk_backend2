@@ -52,6 +52,8 @@ const testAnimalData = async () => {
 }
 // testAnimalData()
 
+// app.use('/api/:version/', router);
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -99,13 +101,18 @@ app.use(passport.session()); //This is a application-level middleware,
 //the session itself can be authenticated using the built-in session strategy
 
 //Below are the routes!
-app.use('/adoptions', adoptionRoute);
-app.use('/users', usersRoute);
-app.use('/auth', authRoute);
+app.use('/api/adoptions', adoptionRoute);
+app.use('/api/users', usersRoute);
+app.use('/api/auth', authRoute);
 
 //Testing if server works
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
 	res.send('hello TESTING, successful!');
+
+});
+
+app.get('/api/hello', (req, res) => {
+	res.send('/api/hello, successful!');
 
 });
 
