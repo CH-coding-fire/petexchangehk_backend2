@@ -86,8 +86,10 @@ const sessionConfig = {
 		expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
 		maxAge: 1000 * 60 * 60 * 24 * 7,
 		// domain: thisServerURL,
-		// sameSite: 'strict'
-		// secure:true
+		// domain: 'localhost:3000',
+		// sameSite: 'none'
+		secure:true,
+		httpOnly: false
 	},
 };
 app.set('trust proxy', 1);
