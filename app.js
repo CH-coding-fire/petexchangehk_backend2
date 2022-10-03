@@ -87,7 +87,7 @@ const sessionConfig = {
 		maxAge: 1000 * 60 * 60 * 24 * 7,
 		// domain: thisServerURL,
 		// domain: 'localhost:3000',
-		// sameSite: 'none'
+		sameSite: 'none',
 		secure:true,
 		httpOnly: false
 	},
