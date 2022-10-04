@@ -69,7 +69,7 @@ app.use(bodyParser.text());
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', targetClientURL);
   res.header('Access-Control-Allow-Credentials', true);
-	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-type, Accept, Authorization');
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-type, Accept, Authorization, access-control-allow-credentials');
 	res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
   next();
 });
