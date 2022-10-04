@@ -4,6 +4,7 @@ const User = require('../models/users');
 const { isLoggedIn } = require('../middleware');
 
 router.route('/nicknameContact').post(isLoggedIn, async (req, res) => {
+	console.log('/nicknameContact', req.body)
 	const { nickname, contactInfo } = req.body;
 	try {
 		let user = await User.findOneAndUpdate(

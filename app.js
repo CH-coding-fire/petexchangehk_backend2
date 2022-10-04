@@ -69,7 +69,7 @@ app.use(bodyParser.text());
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', targetClientURL);
   res.header('Access-Control-Allow-Credentials', true);
-	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-type, Accept, Authorization');
 	res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
   next();
 });
@@ -124,8 +124,6 @@ app.get('/hello', (req, res) => {
 app.get('/req', async (req, res) => {
 	console.log('from app req.user:', req.user);
 	console.log('from app req.body:', req.body);
-	// console.log('from app req.session:' ,req.session)
-	// res.json({ 'req.user': req.user, 'req.body': req.body })
 	res.end(`The req.user is ${req.user}`)
 });
 
