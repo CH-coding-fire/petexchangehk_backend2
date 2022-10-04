@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router({ mergeParams: true });
 const adoptions = require('../controllers/adoptions');
-const { isLoggedIn } = require('../middleware');
+const { isLoggedIn, consolelogMiddleWare } = require('../middleware');
 const multer = require('multer');
 const { storage, tempImageStorage } = require('../cloudinary');
 const upload = multer({ storage:storage });
-const uploadToTemp  = multer({ storage:tempImageStorage });
+const uploadToTemp = multer({ storage: tempImageStorage });
+
 
 
 
@@ -13,7 +14,7 @@ router
 	.route('/')
 	.get(adoptions.loadAnimals)
 	.post(adoptions.uploadAnimal)
-	.put(adoptions.updateAnimal)
+	.put(consolelogMiddleWare, adoptions.updateAnimal)
 	// .delete(adoptions.deleteAdoption)
 
 router.route('/new').get(isLoggedIn, adoptions.renderCreateForm);
